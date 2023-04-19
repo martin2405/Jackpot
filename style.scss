@@ -1,0 +1,291 @@
+@mixin button-layout ($border-size) {
+    background-color: rgb(218, 165, 32);
+    border: $border-size solid gold;
+    font-family: 'Hammersmith One', sans-serif;
+    color: rgb(155, 0, 0);
+    box-shadow: inset 0 0 10px 2px;
+
+    &:hover {
+        background-color: rgb(255, 255, 70);
+    }
+}
+
+@mixin span-layout {
+    padding: 2px 0;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(218, 165, 32);
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+@mixin numbers-layout {
+    border-radius: 3px;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    background-color: rgb(39, 21, 21);
+    color: white;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, red, green);
+}
+
+.button {
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.jackpot {
+    width: 80%;
+    height: 800px;
+    margin: calc(50% - 900px) auto 0 auto;
+    padding: 40px 100px;
+
+    &__h1 {
+        font-size: 80px;
+        font-family: 'Stalinist One', cursive;
+        margin-left: 148px;
+    }
+
+    &__game {
+        background-color: #bbb;
+        height: 550px;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        border: 5px solid gold;
+        background-color: rgb(218, 165, 32);
+        box-shadow: inset 0 0 10px 2px;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        // flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        // overflow: hidden;
+    }
+
+    &__settings {
+        display: flex;
+        width: 80%;
+        height: 10%;
+        background-color: #aaa;
+        border: 2px solid rgb(218, 165, 32);
+        margin: 0 auto;
+        border-radius: 3px;
+        box-shadow: rgb(218, 165, 32) 0 0 20px 8px;
+    }
+}
+
+.window {
+    position: relative;
+    height: 350px;
+    width: 350px;
+    background-color: #ddd;
+    @include button-layout(3px);
+    box-shadow: inset 0 0 10px 2px, inset 0 0 50px 2px, 0 0 30px 2px black;
+
+    &:hover {
+        background-color: rgb(218, 165, 32);
+    }
+
+    &-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+    }
+}
+
+.settings {
+    &__info {
+        font-size: 40px;
+        flex-basis: 7%;
+        color: rgb(218, 165, 32);
+        background-color: rgb(155, 0, 0);
+
+        &:hover {
+            background-color: rgb(206, 0, 0);
+        }
+    }
+
+    &__deposit {
+        width: 19%;
+        border-right: 1px solid gold;
+        @include numbers-layout();
+
+        &-p {
+            @include span-layout();
+        }
+    }
+
+    &__rate {
+        width: 20%;
+        @include numbers-layout();
+
+        &-p {
+            @include span-layout();
+        }
+    }
+
+    &__rate-buttons {
+        width: 4%;
+
+        &-button {
+            width: 100%;
+            height: 50%;
+            @include button-layout(1px);
+        }
+    }
+
+    &__win {
+        width: 25%;
+        @include numbers-layout();
+
+        &-p {
+            @include span-layout();
+        }
+    }
+
+    &__play {
+        @include button-layout(2px);
+        flex-grow: 1;
+        font-size: 60px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+}
+
+.list {
+    background-color: transparent;
+    width: 17%;
+    position: relative;
+    border-left: 5px solid gold;
+    border-right: 5px solid gold;
+
+
+    top: -233%;
+    left: 0;
+
+    &__div {
+        width: 100%;
+        margin-bottom: 40px;
+        position: relative;
+
+
+
+        &-img {
+            width: 100%;
+        }
+    }
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: no-drop;
+
+    &:hover {
+        background-color: rgb(218, 165, 32);
+    }
+}
+
+.info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: none;
+
+    &__ratio {
+        position: fixed;
+        width: 50%;
+        height: 50%;
+        background-color: #ddd;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include numbers-layout();
+        padding: 30px;
+
+        :nth-child(1) {
+            left: 10%;
+        }
+
+        :nth-child(2) {
+            right: 30%;
+        }
+    }
+
+    &__img-contener {
+        width: 100%;
+        flex-basis: 170px;
+        margin-top: 0px;
+    }
+
+    &__img-img {
+        width: 100%;
+    }
+
+    &-button {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        outline: none;
+        font-size: 20px;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+        @include button-layout(1px)
+    }
+}
+
+.img-contener {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 100px;
+}
+
+.contener-img {
+    position: absolute;
+    height: 100%;
+    width: 30px;
+}
+
+.first-img {
+    left: 35%;
+
+    &__p {
+        margin-top: 75px;
+    }
+}
+
+.second-img {
+    right: 15%;
+
+    &__p {
+        margin-top: 40px;
+    }
+
+    &__p+&__p {
+        margin-top: 105px;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackpot</title>
+    <script src="https://kit.fontawesome.com/b7d2920142.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Stalinist+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+    <div class="jackpot">
+        <h1 class="jackpot__h1">jackpot</h1>
+        <div class="jackpot__game">
+            <div class="window"><img class="window-img" src="./images/strawberry.png" alt=""></div>
+            <div class="window"><img class="window-img" src="./images/watermelon.png" alt=""></div>
+            <div class="window"><img class="window-img" src="./images/orange.png" alt=""></div>
+        </div>
+        <div class="jackpot__settings settings">
+            <button class="settings__info button"><i class="fas fa-info"></i></button>
+            <div class="settings__deposit">
+                <p class="settings__deposit-p">depozyt</p>
+                <span class="settings__deposit-span">1000.00</span>
+            </div>
+            <div class="settings__rate">
+                <p class="settings__rate-p">stawka całkowita</p>
+                <span class="settings__rate-span">0.50</span>
+            </div>
+            <div class="settings__rate-buttons">
+                <button class="settings__rate-buttons-button button"><i class="fas fa-plus"></i></button>
+                <button class="settings__rate-buttons-button button disabled"><i class="fas fa-minus"></i></button>
+            </div>
+            <div class="settings__win">
+                <p class="settings__win-p">wygrana</p>
+                <span class="settings__win-span">0.00</span>
+            </div>
+            <button class="settings__play button">spin</button>
+        </div>
+    </div>
+    <div class="info">
+        <div class="info__ratio">
+            <div class="img-contener first">
+                <div class="info__img-contener"><img class="info__img-img" src="./images/cherries.png" alt="">
+                </div>
+                <div class="info__img-contener"><img class="info__img-img" src="./images/citrin.png" alt="">
+                </div>
+                <div class="info__img-contener"><img class="info__img-img" src="./images/orange.png" alt="">
+                </div>
+            </div>
+            <div class="img-contener second">
+                <div class="info__img-contener"><img class="info__img-img" src="./images/strawberry.png" alt="">
+                </div>
+                <div class="info__img-contener"><img class="info__img-img" src="./images/watermelon.png" alt="">
+                </div>
+            </div>
+            <div class="contener-img first-img">
+                <p class="first-img__p">x2</p>
+                <p class="first-img__p">x3</p>
+                <p class="first-img__p">x5</p>
+            </div>
+            <div class="contener-img second-img">
+                <p class="second-img__p">x10</p>
+                <p class="second-img__p">x25</p>
+            </div>
+            <button class="info-button">X</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
